@@ -84,7 +84,7 @@ public struct CBScanner: UIViewRepresentable {
 
         if isActive {
             if !(uiView.session?.isRunning ?? false) {
-                DispatchQueue.global(qos: .userInitiated).async { 
+                DispatchQueue.global(qos: .background).async {
                     uiView.session?.startRunning()
                 }
             }
